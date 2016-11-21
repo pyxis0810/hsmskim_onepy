@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>1PY</title>
+    <link type="text/css" rel="stylesheet" href="build/css/style.min.css" />
+    <script src="build/js/app.js"></script>
+</head>
+<body>
+<div id="logo"></div>
+<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">창업신청</h4>
+      </div>
+      <form action="/join" method="POST" class="form-horizontal">
+      <div class="modal-body">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">이름</span>
+                <input type="text" class="form-control" placeholder="이름" id="username_input" name="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">이메일</span>
+                <input type="text" class="form-control" placeholder="이메일" id="email_input" name="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">전화번호</span>
+                <input type="text" class="form-control" placeholder="전화번호" id="phone_input" name="phone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">장소</span>
+                <input type="text" class="form-control" placeholder="창업하려는 장소" id="location_input" name="location">
+            </div>
+        </div>
+        <div class="row">
+            <textarea class="form-control" id="text_input" name="text" rows="5" placeholder="남기실 말씀"></textarea>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input id="test" type="submit" name="Submit" value="신청" class="btn btn-primary">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="join" class="circle">가맹<br>신청</div>
+<div class="window">
+    <div class="window-content">
+        <div>
+            (주)한평의꿈은 1평을 플랫폼으로 취약계층의 마이크로 창업을 돕는 사회공헌 청년 기업입니다.
+        </div>
+    </div>
+    <div class="window-review"></div>
+</div>
+<div class="footer">
+    <div class="copyright">
+        (주)한평의 꿈, 1PY   대표: 김민순   주소: 서울시 은평구 녹번동 5번지 사업자등록번호: 459-86-00206 <b>대표번호: 1800-0713</b><br>
+        Copyright© 1py Inc. All rights reserved.
+    </div>
+    <div class="footer-logo"></div>
+</div>
+<div id="fullpage">
+    <div class="section">
+        <div class="section1">
+            <div class="section1-content">
+                <div class="section1-content-1">마이크로 <b>1인 창업</b><br>성공적인 <b>세컨잡</b><br>스마트한 <b>투자</b></div>
+                <div class="section1-content-window"></div>
+                <div class="section1-content-2">평에서<br><b>시작하자!</b></div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section2"></div>
+    </div>
+    <div class="section">
+        <div class="section3">
+            <div class="section3-filter"></div>
+            <div class="section3-content">
+                <div class="section3-content-1">한평의꿈 1Dream-Step™</div>
+            </div>
+            <div class="section3-box">
+                <div class="section3-box-1">
+                    <p class="title">1. 창업희망자 모집</p>
+                    <p>1인 창업 희망자 및<br>공간소유주 모집</p>
+                </div>
+                <div class="section3-box-2">
+                    <p class="title">2. 한평의꿈 매뉴얼 교육</p>
+                    <p>전문 멘토링 그룹에 의한<br>플랫폼 운영 교육</p>
+                </div>
+                <div class="section3-box-3">
+                    <p class="title">3. 1평 플랫폼 현장 실습</p>
+                    <p>1개월 현장 교육 프로그램<br>직영 1평 플랫폼에서 실습</p>
+                </div>
+                <div class="section3-box-4">
+                    <p class="title">4. 1평 플랫폼 인수/시범운영</p>
+                    <p>보증금 납입과 신원보증 후<br>플랫폼 인수(시범 운영 지원)</p>
+                </div>
+                <div class="section3-box-5">
+                    <p class="title">5. 1평 플랫폼 성공적 창업</p>
+                    <p>성공적 1인 창업<br>안정적 운영</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="section">
+        <div class="section4-filter"></div>
+        <div class="section4">
+            <div class="section4-content">
+                <div class="section4-content-1">DISCOVER YOUNGS</div>
+                <div class="section4-content-2">한평의꿈을 통해 꿈을 이룬 젊은 창업가들을 만나보세요.</div>
+            </div>
+            <div class="section4-box">
+                <div class="section4-box-1">
+                    <img src="<%= data[0].img %>">
+                    <p class="title">
+                        <%= data[0].title %>
+                    </p>
+                    <p>
+                        <%= data[0].content %>
+                    </p>
+                    <span class="glyphicon glyphicon-map-marker"></span><%= data[0].location %>
+                </div>
+                <% if (data.length > 1) { %>
+                    <div class="section4-box-1">
+                        <img src="<%= data[1].img %>">
+                        <p class="title">
+                            <%= data[1].title %>
+                        </p>
+                        <p>
+                            <%= data[1].content %>
+                        </p>
+                        <span class="glyphicon glyphicon-map-marker"></span><%= data[1].location %>
+                    </div>
+                    <div class="section4-box-1">
+                        <img src="<%= data[2].img %>">
+                        <p class="title">
+                            <%= data[2].title %>
+                        </p>
+                        <p>
+                            <%= data[2].content %>
+                        </p>
+                        <span class="glyphicon glyphicon-map-marker"></span><%= data[2].location %>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="section4-button">
+                <a href="/review" class="btn btn-outline">모아보기</a>
+            </div>
+        </div>
+    </div> -->
+    <div class="section">
+        <div class="slide" id="slide1" data-anchor="slide1">
+            <div class="section5-box"></div>
+            <div class="section5-1">
+                <div class="section5-content-1">FOOD BOX</div>
+                <div class="section5-content-2">시나몬 향과 크림으로 겉과 속이 꽉찬 스페니쉬 수제 츄러스, 스윗 츄러스!</div>
+            </div>
+            <div class="slideBtn-1">
+                <span class="slidePrev"></span>
+                <span class="slideNext"></span>
+            </div>
+        </div>
+        <div class="slide" id="slide2" data-anchor="slide2">
+            <div class="section5-box"></div>
+            <div class="section5-2">
+                <div class="section5-content-1">FOOD BOX</div>
+                <div class="section5-content-2">무더운 더위를 날려줄 하와이안 스타일 쉐이브아이스, 아이스버그!</div>
+            </div>
+            <div class="slideBtn-2">
+                <span class="slidePrev"></span>
+                <span class="slideNext"></span>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section6">
+            <div id="instafeed"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section7">
+            <div class="section7-box">
+                <div class="section7-box-1">
+                    <p class="title">About Us</p>
+                    <p class="logo"></p>
+                    <div class="guide">
+                        <div>
+                            <p class="bold">HELP</p>
+                            FAQ<br>
+                            Our Rules<br>
+                            Support<br>
+                            Privacy Policy
+                        </div>
+                        <div>
+                            <p class="bold">HELLO</p>
+                            <span class="facebook"></span>Facebook<br>
+                            <span class="instagram">Instagram
+                        </div>
+                    </div>
+                </div>
+                <div class="section7-box-2">
+                    <p class="title">NEWS FEED</p>
+                    <p>
+                        <a href="http://mnews.sbs.co.kr/news/endPage.do?newsId=N1003128295" target="_blank">2015.08.19 SBS뉴스</a><br>
+                        <a href="http://m.kmib.co.kr/view.asp?arcid=0923206211&code=11131100&sid1=soc" target="_blank">2015.08.19 국민일보</a><br>
+                        <a href="http://m.yna.co.kr/kr/contents/?cid=AKR20150818168600004&mobile" target="_blank">2015.08.18 연합뉴스</a><br>
+                        <a href="http://m.mk.co.kr/news/headline/2015/794685" target="_blank">2015.08.18 매일경제</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="section">Some section</div>
+    <div class="section">Some section</div>-->
+</div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-71404736-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

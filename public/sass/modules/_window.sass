@@ -1,0 +1,96 @@
+.window
+  pointer-events: none
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-left: -($window-size/2)
+  margin-top: -($window-size/2)
+  width: $window-size
+  height: $window-size
+  border: 3px solid #fff
+  font-family: $title-font
+  z-index: 999
+  transition: width 0.15s ease-out, height 0.15s ease-out, margin-left 0.15s ease-out, margin-top 0.15s ease-out, font-size 0.15s ease-out, color 0.15s ease-out
+  &.scale-up-15
+    width: $window-size * 1.5
+    height: $window-size * 1.5
+    margin-left: -(($window-size * 1.5)/2)
+    margin-top: -(($window-size * 1.5)/2)
+  &.scale-up-30
+    width: $window-size * 3
+    height: $window-size * 3
+    margin-left: -(($window-size * 3)/2)
+    margin-top: -(($window-size * 3)/2)
+  &.fill-color
+    background: #7f8c8d
+    border-width: 6px
+
+  @media screen and (max-width: $break-sm)
+    $scale: 0.5
+    $window-size-media: $window-size * $scale
+    margin-left: -($window-size-media/2)
+    margin-top: -($window-size-media/2)
+    height: $window-size-media
+    width: $window-size-media
+    &.scale-up-15
+      width: $window-size-media * 2
+      height: $window-size-media * 2
+      margin-left: -(($window-size-media * 2)/2)
+      margin-top: -(($window-size-media * 2)/2)
+    &.scale-up-30
+      width: $window-size * 3
+      height: $window-size * 3
+      margin-left: -(($window-size * 3)/2)
+      margin-top: -(($window-size * 3)/2)
+
+  @media screen and (min-width: $break-lg)
+    $scale: 1.5
+    $window-size-media: $window-size * $scale
+    margin-left: -($window-size-media/2)
+    margin-top: -($window-size-media/2)
+    height: $window-size-media
+    width: $window-size-media
+    &.scale-up-15
+      width: $window-size-media * 1.5
+      height: $window-size-media * 1.5
+      margin-left: -(($window-size-media * 1.5)/2)
+      margin-top: -(($window-size-media * 1.5)/2)
+    &.scale-up-30
+      width: $window-size * 3
+      height: $window-size * 3
+      margin-left: -(($window-size * 3)/2)
+      margin-top: -(($window-size * 3)/2)
+
+  .window-content
+    display: none
+    height: 100%
+    text-align: center
+    div
+      padding: 10px
+      color: #fff
+      font-size: 2.2rem
+      @media screen and (max-width: $break-xs)
+        font-size: 1.35rem
+      @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+        font-size: 1.35rem
+      @media screen and (min-width: $break-lg)
+        font-size: 3.4rem
+    &:before
+      $font-size: 200px
+      display: block
+      position: relative
+      height: 50%
+      top: 25%
+      font-family: onepy
+      content: $onepy-logo
+      font-size: $font-size
+      line-height: ($font-size/3)
+      color: $onepy-logo-color
+      @media screen and (max-width: $break-sm)
+        $scale: 0.5
+        font-size: ($font-size * $scale)
+        line-height: (($font-size * $scale)/3)
+      @media screen and (min-width: $break-lg)
+        $scale: 1.25
+        font-size: ($font-size * $scale)
+        line-height: (($font-size * $scale)/3)

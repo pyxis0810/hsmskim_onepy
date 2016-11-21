@@ -1,0 +1,154 @@
+.slideBtn-1
+  position: absolute
+  z-index: 999
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  color: #fff
+  font-size: 4em
+
+.slideBtn-2
+  position: absolute
+  z-index: 999
+  top: 0
+  right: 0
+  width: 100%
+  height: 100%
+  color: #fff
+  font-size: 4em
+
+.slidePrev
+  position: absolute
+  float: left
+  top: 50%
+  left: 5%
+  height: 0
+  cursor: pointer
+  &:before
+    font-family: onepy
+    content: $onepy-left
+    color: #fff
+    font-size: 120px
+    line-height: 0
+    @media screen and (max-width: $break-sm)
+      position: absolute
+      font-size: 60px
+      left: 0
+
+.slideNext
+  position: absolute
+  float: right
+  top: 50%
+  right: 5%
+  height: 0
+  cursor: pointer
+  &:before
+    font-family: onepy
+    content: $onepy-right
+    color: #fff
+    font-size: 120px
+    line-height: 0
+    @media screen and (max-width: $break-sm)
+      position: absolute
+      font-size: 60px
+      right: 0
+
+#slide1, #slide2
+  position: relative
+
+.section5-box
+  position: absolute
+  width: $window-size * 2
+  height: $window-size * 2
+  border: 4px solid #fff
+  left: 50%
+  top: 50%
+  margin-top: -$window-size
+  margin-left: -$window-size
+  @media screen and (max-width: $break-xs)
+    $scale: 0.25
+    $window-size-media: $window-size * $scale
+    width: $window-size-media * 2
+    height: $window-size-media * 2
+    margin-top: -$window-size-media
+    margin-left: -$window-size-media
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+    $scale: 0.4
+    $window-size-media: $window-size * $scale
+    width: $window-size-media * 2
+    height: $window-size-media * 2
+    margin-top: -$window-size-media
+    margin-left: -$window-size-media
+  @media screen and (min-width: $break-lg)
+    $scale: 1.4
+    $window-size-media: $window-size * $scale
+    width: $window-size-media * 2
+    height: $window-size-media * 2
+    margin-top: -$window-size-media
+    margin-left: -$window-size-media
+
+.section5-content-1
+  width: 100%
+  top: 15%
+  position: absolute
+  text-align: center
+  font-family: $title-font
+  font-size: 3rem
+  font-weight: 700
+  color: #fff
+  @media screen and (max-width: $break-xs)
+    top: 30%
+    font-size: 3rem
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+    top: 10%
+    font-size: 2rem
+  @media screen and (min-width: $break-lg)
+    top: 15%
+    font-size: 4rem
+
+.section5-content-2
+  width: 100%
+  top: 80%
+  position: absolute
+  text-align: center
+  font-family: $title-font
+  font-size: 2.5rem
+  color: #fff
+  @media screen and (max-width: $break-xs)
+    top: 65%
+    font-size: 1.75rem
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+    top: 80%
+    font-size: 1.5rem
+  @media screen and (min-width: $break-lg)
+    font-size: 3rem
+    top: 80%
+
+.section5-1
+  position: relative
+  margin: 0 auto
+  width: 60%
+  height: 100%
+  background: url("../img/1py-slide4-1.png")
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center center
+  @media screen and (max-width: $break-sm)
+    width: 50%
+  @media screen and (min-width: $break-lg)
+    width: 50%
+
+.section5-2
+  position: relative
+  margin: 0 auto
+  width: 60%
+  height: 100%
+  background: url("../img/1py-slide4-2.png")
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center center
+  @media screen and (max-width: $break-sm)
+    width: 50%
+  @media screen and (min-width: $break-lg)
+    width: 50%

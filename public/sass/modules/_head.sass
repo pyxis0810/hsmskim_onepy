@@ -1,0 +1,65 @@
+#logo
+  position: absolute
+  top: 5%
+  left: 5%
+  height: 0
+  width: 0
+  z-index: 999
+  cursor: pointer
+
+  &:before
+    $font-size: 120px
+    font-family: onepy
+    content: $onepy-logo
+    font-size: $font-size
+    line-height: ($font-size/3)
+    color: $onepy-logo-color
+    @media screen and (max-width: $break-sm)
+      $scale: 0.75
+      font-size: ($font-size * $scale)
+      line-height: (($font-size * $scale)/3)
+    @media screen and (min-width: $break-lg)
+      $scale: 1.25
+      font-size: ($font-size * $scale)
+      line-height: (($font-size * $scale)/3)
+  &.grey:before
+    color: #333
+
+.circle
+  position: fixed
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+  background-color: black
+  height: 100px
+  width: 100px
+  color: #fff
+  right: 5%
+  top: 5%
+  bottom: inherit
+  display: table-cell
+  text-align: center
+  vertical-align: middle
+  font-size: 2rem
+  line-height: 1.5
+  padding-top: 20px
+  font-weight: 700
+  font-family: $title-font
+  cursor: pointer
+  background-color: #E1291A
+  border: 2px solid #fff
+  z-index: 9999
+  &:hover
+    background-color: darken(#E1291A, 10%)
+  @media screen and (max-width: $break-sm)
+    right: 5%
+    bottom: 5%
+    top: inherit
+    height: 80px
+    width: 80px
+    font-size: 1.5rem
+    padding-top: 16px
+  @media screen and (min-width: $break-lg)
+    right: 5%
+    top: 5%
+    bottom: inherit

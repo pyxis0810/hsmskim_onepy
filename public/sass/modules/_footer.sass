@@ -1,0 +1,37 @@
+.footer
+  display: none
+  width: 100%
+  height: 15%
+  padding: 30px
+  position: fixed
+  bottom: -15%
+  background: #000
+  color: #fff
+  z-index: 999
+  transition: bottom 0.5s linear
+  &.slide
+    bottom: 0
+
+.copyright
+  position: relative
+  float: left
+  @media screen and (max-width: $break-xs)
+    font-size: 1rem
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+    font-size: 1rem
+
+
+.footer-logo
+  position: absolute
+  right: 30px
+  bottom: 0
+  &:before
+    font-family: onepy
+    content: $onepy-logo
+    font-size: 100px
+    color: #fff
+    line-height: 0
+  @media screen and (max-width: $break-xs)
+    display: none
+  @media screen and (min-width: $break-xs) and (max-width: $break-sm)
+    display: none

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>1PY Review</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style_review.css" />
+    <script src="/javascripts/jquery-1.11.2.min.js"></script>
+    <script src="/javascripts/jquery.easings.min.js"></script>
+    <script src="/javascripts/jquery.slimscroll.min.js"></script>
+    <script src="/javascripts/jquery.fullPage.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">글쓰기</h4>
+      </div>
+      <form action="/review" method="POST" enctype="multipart/form-data" class="form-horizontal">
+      <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">이름</span>
+                    <input type="text" class="form-control" placeholder="이름" id="username_input" name="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">장소</span>
+                    <input type="text" class="form-control" placeholder="장소" id="location_input" name="location">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">제목</span>
+                    <input type="text" class="form-control" placeholder="제목" id="title_input" name="title">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <input type="file" name="img" size="20">
+                </div>
+            </div>
+            <div class="row">
+                <textarea class="form-control" id="text_input" name="content" rows="10"></textarea>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">비밀번호</span>
+                    <input type="text" class="form-control" placeholder="비밀번호" id="password_input" name="password">
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" name="Submit" value="신청" class="btn btn-primary">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><div id="logo"></div></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="prev">홈</a></li>
+                <li><a href="#" id="write">글쓰기</a></li>
+            <!-- <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li> -->
+            </ul>
+        <!-- <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+        </form> -->
+        </div>
+    </div>
+</nav>
+
+<div class="header">
+    <div class="txt">
+        <div class="txt-l">DISCOVER YOUNGS</div>
+        <div class="txt-m">1PY는 젊은 창업가와 실버 투자자가 함께하는 다양한 솔루션을 제공합니다.</div>
+    </div>
+</div>
+
+<div class="reviews">
+    <div class="container">
+        <div class="page-header">
+            <h3> <%= data.length %>명의 예비 창업가 분들이 참여 중입니다. </h3>
+        </div>
+        <div class="row">
+            <% for(var i=0; i<data.length; i++) {%>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="<%= data[i].img %>" alt="<%= data[i].title %>">
+                        <div class="caption">
+                            <h4><%= data[i].title %></h4>
+                            <p><%= data[i].content %></p>
+                            <p class="etc">
+                                <%= data[i].name %><br>
+                                <%= data[i].date %><br>
+                                <%= data[i].location %>
+                            </p>
+                            <p><a href="/review/<%= data[i].id %>" class="btn btn-outline" role="button">자세히 보기</a></p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="copyright">
+        (주)한평의 꿈, 1PY   대표: 김민순   주소: 서울시 은평구 녹번동 5번지 사업자등록번호: 459-86-00206 <b>대표번호: 1800-0713</b><br>
+        Copyright© 1py Inc. All rights reserved.
+    </div>
+    <div class="footer-image"></div>
+</div>  
+
+<script>
+    $('#logo').on('click', function() {
+        var url = window.location.pathname;
+        window.location.href = url;
+    });
+
+    $('#prev').on('click', function(e){
+        e.preventDefault();
+        var url = window.location.origin;
+
+        window.location.href = url;
+        return false;
+    });
+
+    $('#write').on('click', function(e){
+        e.preventDefault();
+        $('#myModal').modal();
+    })
+</script>
+
+</body>
+</html>
+

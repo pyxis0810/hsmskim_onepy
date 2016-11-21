@@ -1,0 +1,41 @@
+.section6
+  width: 100%
+  height: 100%
+
+#instafeed
+  width: 100%
+  height: 100%
+
+#instafeed .item
+  position: relative
+  display: inline-block
+  width: 25%
+  @media screen and (max-width: $break-sm)
+    width: 50%
+  @media screen and (min-width: $break-lg)
+    width: 25%
+
+
+#instafeed .image
+  width: 100%
+  height: 100%
+
+#instafeed .caption
+  position: absolute
+  padding: 10px
+  left: 0
+  bottom: 0
+  color: #fff
+  font-size: 1em
+  max-width: 100%
+  word-break: break-all
+  @media screen and (max-width: $break-sm)
+    padding: 5px
+    font-style: 5px
+
+  .instagram
+    &:before
+      font-family: onepy
+      content: $onepy-instagram
+      color: #fff
+      font-size: $base-font-size

@@ -1,0 +1,119 @@
+body {
+	background: #fff;
+}
+
+input[type=file] {
+	padding: 10px;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+.navbar{
+	background: #000
+}
+
+.nav {
+	margin-right: 0;
+	margin-top: 10px;
+}
+
+.glyphicon {
+	font-size: 2em;
+	color: #fff;
+}
+
+.header {
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 300px;
+	background: url('../images/1py-slide3.png') no-repeat;
+	background-position: left center;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+}
+
+.header .txt {
+	position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    top: 50%;
+}
+
+.header .txt-l {
+	font-size: 3em;
+}
+.header .txt-m {
+	font-size: 1em;
+}
+
+#logo {
+	width: 60px;
+	height: 40px;
+	cursor: pointer;
+	background: url('../images/1py-logo-w-s.png') no-repeat;
+	background-size: contain;
+}
+
+#prev {
+	cursor: pointer;
+}
+
+.caption {
+	color: #555;
+}
+
+.etc {
+	font-size: 0.75em;
+	color: #999;
+}
+
+.btn-outline {
+	border: 2px solid #3498db;
+	border-radius: 20px;
+	background: transparent;
+	font-size: 0.85em;
+}
+
+.article {
+	text-align: center;
+}
+
+.article .content {
+	float: none;
+	margin: 0 auto;
+}
+
+.footer {
+	width:100%;
+	height: 120px;
+	padding: 30px;
+	margin-top: 50px;
+	position: relative;
+	bottom: 0;
+	background: #000;
+	color: #fff;
+	z-index: 999;
+}
+
+.copyright {
+	position: absolute;
+	float: left;
+	bottom: 30px;
+	left: 30px;
+}
+
+.footer-image {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	width: 105px;
+	height: 40px;
+	background: url(../images/1py-logo-w-s.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
