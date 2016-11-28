@@ -1,5 +1,4 @@
 var $ = jQuery = require('jquery');
-var Instafeed = require('instafeed.js');
 require('./jquery.easings.min');
 require('./jquery.slimscroll.min');
 require('./jquery.fullPage');
@@ -11,6 +10,14 @@ $(function(){
         $logo = $("#logo"),
         $window = $(".window"),
         $footer = $(".footer");
+
+    var init = function() {
+        $.ajax({
+          url: '/instagram'
+        }).done(function(res) {
+          console.log(res);
+        });
+    };
 
     var oldSlimScroll = $.fn.slimScroll;
     $.fn.slimScroll = function( options ){
@@ -95,28 +102,7 @@ $(function(){
         }
     });
 
-    var userFeed = new Instafeed({
-        get: 'user',
-        userId: 2084305522,
-        accessToken: '2084305522.467ede5.ca16029b92974e428ba0770abd9e4a4d',
-        resolution: 'standard_resolution',
-        limit: 12,
-        template: '<div class="item"><a href="{{link}}"><img class="image" src="{{image}}" /><div class="caption"><span class="instagram"></span> 1py_dream<br>{{caption}}"</div></a></div>',
-        after: function() {
-            /*var documentWidth = $( document ).width();
-            var documentHeight = $( document ).height();
-            if(documentWidth > 980) {
-                var w = documentWidth/4;
-                var h = documentHeight/2;
-                $('#instafeed .item').css({'width': w+'px', 'height': h+'px'});
-            } else {
-                var w = documentWidth/2;
-                var h = documentHeight/3
-                $('#instafeed .item').css({'width': w+'px', 'height': h+'px'});
-            }*/
-        }
-    });
-    userFeed.run();
+
 
     /*function doOnOrientationChange()
     {
@@ -144,6 +130,8 @@ $(function(){
 
     // Initial execution if needed
     doOnOrientationChange();*/
+
+    init();
 
     $('#logo').on('click', function() {
         //console.log(window.location);
